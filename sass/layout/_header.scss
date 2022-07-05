@@ -1,0 +1,38 @@
+.header {
+  position: relative;
+  height: 95vh;
+  /* to make a linear gradient: control the flow by using [to right, to left etc., select the diff colors, then the image] */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /* 4 points. 
+  top left corner- (0 0),
+  at point 0, moves 100% to down left corner - (0 100%)
+  moves for 100% and stops at the extreme top right corner - (100% 0)
+  moves down at 100% and stops at the extreme bottom right 100%- (100% 100%)
+   */
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
